@@ -2,9 +2,11 @@ const addEvents = () => {
     const dropdownNavbar = document.querySelector('nav.dropdown');
     const menuIcon = document.querySelector('img.menu-icon');
     const sidebar = document.querySelector('div.sidebar');
+    const photoSlider = document.querySelector('.photo-slider')
 
     addDropDownEvents(dropdownNavbar);
     addSidebarEvents(menuIcon, sidebar);
+    addPhotoSliderEvents(photoSlider);
 };
 
 const addDropDownEvents = (dropdownNavbar) => {
@@ -56,4 +58,80 @@ const addSidebarEvents = (menuIcon, sidebar) => {
     };
 };
 
+const addPhotoSliderEvents = (photoSlider) => {
+    const backArrow = photoSlider.querySelector("img.back-arrow");
+    const forwardArrow = photoSlider.querySelector("img.forward-arrow");
+    const photos = photoSlider.querySelectorAll("img.photo");
+    const navigationDots = photoSlider.querySelectorAll(".navigation-dot");
+    let currentPhotoIndex = 0;
+    let renderPhoto;
+    let styleNavigationDots;
+    let incrementPhoto;
+
+    renderPhoto = () => {
+        photos.forEach((photo) => {
+            if (photo.dataset.index === currentPhotoIndex.toString()) {
+                photo.classList.remove("hidden");
+            } else {
+                photo.classList.add("hidden");
+            }
+        })
+    };
+
+    styleNavigationDots = () => {
+        navigationDots.forEach((navigationDot) => {
+            if (navigationDot.dataset.index === currentPhotoIndex.toString()) {
+                navigationDot.classList.add("active");
+            } else {
+                navigationDot.classList.remove("active");
+            }
+        });
+    };
+
+    backArrow.addEventListener("click", () => {
+        if (currentPhotoIndex === 0) {
+            currentPhotoIndex = 3;
+        } else {
+            currentPhotoIndex--;
+        }
+
+        renderPhoto();
+        styleNavigationDots();
+    });
+
+
+    forwardArrow.addEventListener("click", () => {
+        if (currentPhotoIndex === 3) {
+            currentPhotoIndex = 0;
+        } else {
+            currentPhotoIndex++;
+        }
+
+        renderPhoto();
+        styleNavigationDots();
+    });
+
+    navigationDots.forEach((navigationDot) => {
+        navigationDot.addEventListener("click", () => {
+            currentPhotoIndex = navigationDot.dataset.index;
+            renderPhoto();
+            styleNavigationDots();
+        });
+    });
+
+    incrementPhoto = () => {
+        if (currentPhotoIndex === 3) {
+            currentPhotoIndex = 0;
+        } else {
+            currentPhotoIndex++;
+        }
+
+        renderPhoto();
+        styleNavigationDots();
+    };
+
+    setInterval(incrementPhoto, 5000);
+};
+
 addEvents();
+

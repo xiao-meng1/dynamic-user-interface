@@ -103,7 +103,7 @@ body {
     position: absolute;
 }
 
-.menu > .dropdown > li:hover {
+.menu > .dropdown > .dropdown-item:hover {
     background-color: rgb(31, 53, 53);
 }
 
@@ -113,61 +113,64 @@ body {
     padding: 6px;
 }
 
-main {
+main > .photo-slider {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
-main > .photo-slider-header {
+main > .photo-slider > .photo-slider-header {
     font-size: 30px;
-    margin-top: 150px;
+    margin-top: 60px;
 }
 
-main > .photo-slider-container {
+main > .photo-slider > .photo-slider-container {
     position: relative;
     height: 350px;
     width: 1000px;
     margin-top: 20px;
 }
 
-main > .photo-slider-container > img {
+main > .photo-slider .photo-slider-container > img {
     position: absolute;
 }
 
-main > .photo-slider-container > .back-arrow,
-main > .photo-slider-container > .forward-arrow {
+main > .photo-slider > .photo-slider-container > .back-arrow,
+main > .photo-slider > .photo-slider-container > .forward-arrow {
     top: 50%;
     transform: translateY(-50%);
     padding: 20px;
 }
 
-main > .photo-slider-container > .back-arrow:hover {
+main > .photo-slider > .photo-slider-container > .back-arrow:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-main > .photo-slider-container > .forward-arrow {
+main > .photo-slider > .photo-slider-container > .forward-arrow {
     right: 0;
 }
 
-main > .photo-slider-container > .forward-arrow:hover {
+main > .photo-slider > .photo-slider-container > .forward-arrow:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-main > .navigation-dot-container {
+main > .photo-slider > .navigation-dot-container {
     display: flex;
     margin-top: 10px;
     gap: 10px;
 }
 
-main > .navigation-dot-container > .dot {
-    height: 20px;
-    width: 20px;
+main > .photo-slider > .navigation-dot-container > .navigation-dot {
+    height: 15px;
+    width: 15px;
     border-radius: 50%;
     background-color: grey;
 }
 
-main > .navigation-dot-container > .dot:hover {
+main > .photo-slider > .navigation-dot-container > .navigation-dot:hover,
+main > .photo-slider > .navigation-dot-container > .navigation-dot.active {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -177,6 +180,7 @@ footer {
     align-items: center;
     color: white;
     background-color: darkslategray;
+    padding: 4px;
 }
 
 .hidden {

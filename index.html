@@ -17,13 +17,13 @@
         <li class="sidebar-item"><a href="">Link 4</a></li>
     </div>
     <header class="menu">
-        <img class="menu-icon" src="./icons/menu_white_24dp.svg">
+        <img class="menu-icon" src="icons/menu_white_24dp.svg">
         <nav class="dropdown">
             <li class="dropdown-header">
                 Dropdown
                 <div class="container">
-                    <img class="expand-more" src="./icons/expand_more_white_24dp.svg">
-                    <img class="expand-less hidden" src="./icons/expand_less_white_24dp.svg">
+                    <img class="expand-more" src="icons/expand_more_white_24dp.svg">
+                    <img class="expand-less hidden" src="icons/expand_less_white_24dp.svg">
                 </div>
             </li>
             <li class="dropdown-item hidden"><a href="">Link 1</a></li>
@@ -32,7 +32,23 @@
             <li class="dropdown-item hidden"><a href="">Link 4</a></li>
         </nav>
     </header>
-    <main>Main</main>
+    <main>
+        <div class="photo-slider-header">Photo Slider</div>
+        <div class="photo-slider-container">
+            <img class="photo" data-index="0" src="images/img_lights_wide.jpg">
+            <img class="photo hidden" data-index="1" src="images/img_mountains_wide.jpg">
+            <img class="photo hidden" data-index="2" src="images/img_nature_wide.jpg">
+            <img class="photo hidden" data-index="3" src="images/img_snow_wide.jpg">
+            <img class="icon back-arrow" src="icons/arrow_back_ios_white_24dp.svg">
+            <img class="icon forward-arrow" src="icons/arrow_forward_ios_white_24dp.svg">
+        </div>
+        <div class="navigation-dot-container">
+            <div class="dot" data-index="0"></div>
+            <div class="dot" data-index="1"></div>
+            <div class="dot" data-index="2"></div>
+            <div class="dot" data-index="3"></div>
+        </div>
+    </main>
     <footer>Footer</footer>
 </body>
 </html>

@@ -20,7 +20,7 @@ html, body {
 body {
     display: grid;
     grid-template-rows: 54px 1fr auto;
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
     background-color: white;
 }
 
@@ -62,16 +62,17 @@ body {
 }
 
 .menu {
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
+    justify-content: center;
+    position: relative;
     padding: 10px;
     color: white;
     background-color: darkslategray;
 }
 
 .menu > .menu-icon {
-    justify-self: start;
-    align-self: start;
+    position: absolute;
+    left: 10px;
     padding: 4px;
 }
 
@@ -113,7 +114,61 @@ body {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+main > .photo-slider-header {
+    font-size: 30px;
+    margin-top: 150px;
+}
+
+main > .photo-slider-container {
+    position: relative;
+    height: 350px;
+    width: 1000px;
+    margin-top: 20px;
+}
+
+main > .photo-slider-container > img {
+    position: absolute;
+}
+
+main > .photo-slider-container > .back-arrow,
+main > .photo-slider-container > .forward-arrow {
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px;
+}
+
+main > .photo-slider-container > .back-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+main > .photo-slider-container > .forward-arrow {
+    right: 0;
+}
+
+main > .photo-slider-container > .forward-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+main > .navigation-dot-container {
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+main > .navigation-dot-container > .dot {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: grey;
+}
+
+main > .navigation-dot-container > .dot:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 footer {
